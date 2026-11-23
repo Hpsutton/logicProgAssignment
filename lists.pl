@@ -15,4 +15,8 @@ my_reverse([], []).             % Base case
 my_reverse([H|T], L):-          % Recursive case
     my_reverse(T, R),
     my_append(R, [H], L).
-    
+
+sum_list_custom([], 0).
+sum_list_custom([H|T], S):-
+    sum_list_custom(T, Q),
+    S is Q + H.
